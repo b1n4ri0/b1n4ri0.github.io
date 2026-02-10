@@ -16,6 +16,3 @@ Welcome to my personal research space. I focus on hardware hacking, vulnerabilit
 {% for project in site.projects limit:3 %}
 * [{{ project.title }}]({{ project.url }})
 {% endfor %}
-
----
-[GitHub](https://github.com/b1n4ri0)
