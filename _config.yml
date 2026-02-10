@@ -1,0 +1,35 @@
+remote_theme: niklasbuschmann/contrast
+
+# Jekyll plugins
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Site settings
+title: "Neutrino Security"
+author: "b1n4ri0"
+description: "Security research and other geeky stuff"
+permalink: /:title/
+lang: "en"
+
+# Collections
+collections:
+  advisories:
+    output: true
+    permalink: /advisories/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: "_advisories"
+    values:
+      layout: "advisory"
+
+# Exclude from processing
+exclude:
+  - vendor/
+  - .bundle/
+  - Gemfile
+  - Gemfile.lock
+  - .jekyll-cache/
