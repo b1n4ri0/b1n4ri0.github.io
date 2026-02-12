@@ -1,59 +1,45 @@
 ---
 layout: default
 ---
-<style>
-  .advisory-box {
-    background: #1a1a1a;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
-    border: 1px solid #333;
-    border-radius: 4px;
-    margin-bottom: 2rem;
-  }
-  .advisory-box table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0;
-  }
-  .advisory-box td {
-    padding: 5px 10px;
-    border: none;
-    vertical-align: top;
-  }
-  .label { color: #888; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
-  .value { color: #fff; }
-  .severity-high { color: #ff4d4d; font-weight: bold; }
-  .severity-medium { color: #ffaa00; font-weight: bold; }
-</style>
+<article class="advisory">
 
-<article class="post">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+  <h1>{{ page.title }}</h1>
 
-  <div class="advisory-box">
-    <table>
+  <table class="advisory-table">
+    <tbody>
       <tr>
-        <td><span class="label">ID:</span><br><span class="value">{{ page.cve_id | default: "PENDING" }}</span></td>
-        <td><span class="label">Severity:</span><br>
-          <span class="{% if page.severity == 'High' or page.severity == 'Critical' %}severity-high{% else %}severity-medium{% endif %}">
-            {{ page.severity | upcase }}
-          </span>
-        </td>
+        <th scope="row">CVE ID</th>
+        <td>{{ page.cve_id }}</td>
+        <th scope="row">CVSS</th>
+        <td>{{ page.cvss | default: "N/A" }}</td>
       </tr>
-      <tr>
-        <td><span class="label">Vendor:</span><br><span class="value">{{ page.vendor }}</span></td>
-        <td><span class="label">CVSS Score:</span><br><span class="value">{{ page.cvss | default: "N/A" }}</span></td>
-      </tr>
-      <tr>
-        <td><span class="label">Status:</span><br><span class="value">{{ page.status | default: "Draft" }}</span></td>
-        <td><span class="label">Date:</span><br><span class="value">{{ page.date | date: "%Y-%m-%d" }}</span></td>
-      </tr>
-    </table>
-  </div>
 
-  <div class="post-content">
+      <tr>
+        <th scope="row">CWE</th>
+        <td>{{ page.cwe }}</td>
+        <th scope="row">AFFECTED COMPONENT</th>
+        <td>{{ page.affected_component }}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">PRODUCT</th>
+        <td>{{ page.product }}</td>
+        <th scope="row">VERSION</th>
+        <td>{{ page.version }}</td>
+      </tr>
+
+      <tr>
+        <th scope="row">EXPLOITABILITY</th>
+        <td>{{ page.exploitability }}</td>
+        <th scope="row">IMPACT</th>
+        <td>{{ page.impact }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  
+  <section class="advisory-content">
     {{ content }}
-  </div>
+  </section>
+
 </article>

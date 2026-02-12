@@ -29,15 +29,15 @@ defaults:
 #Navigation
 navigation:                     # accepts {file, title, url, icon, sidebaricon}
   - {file: "index.md", sidebaricon: home}
-  - {file: "advisories.md", sidebaricon: address-card}
+  - {file: "advisories.md", sidebaricon: warn}
 
 external:                       # accepts {file, title, url, icon, sidebaricon}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/b1n4ri0/"}
   - {title: Github, icon: github, url: "https://github.com/b1n4ri0"}
 
 show_excerpts: false             # show article excerpts instead of archive list on the home page
-show_frame: true                # display a grey frame on large screens
-show_sidebar: true             # show a sidebar instead of the usual header
+show_frame: false                # display a grey frame on large screens
+show_sidebar: false             # show a sidebar instead of the usual header
 show_minimal: false             # remove all clutter
 
 # Exclude from processing
